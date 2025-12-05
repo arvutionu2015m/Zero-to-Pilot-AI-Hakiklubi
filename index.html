@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero to Pilot AI Häkiklubi | Arvutionu.ee</title>
+  <meta name="description" content="Zero to Pilot AI Häkiklubi aitab innovatsioonijuhil defineerida äriprobleemi ja saada 3–5 pilotlahenduse kontseptsiooni, esmase kasutusvoo, vajaliku sisendi ja mõõdikud ning valmis promptid sisemistele hackathon’idele.">
+  <meta name="author" content="Arvutionu.ee">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Zero to Pilot AI Häkiklubi">
+  <meta property="og:description" content="Äriprobleemist 3–5 pilotini + valmis hackathon promptid.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Arvutionu.ee">
+  <meta name="theme-color" content="#1b2a4e">
+
+  <!-- Bootswatch Superhero (Bootstrap 5) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Zero to Pilot AI Häkiklubi",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Tööriist, mis genereerib äriprobleemi põhjal 3–5 pilotlahenduse kontseptsiooni, kasutusvoo, sisendi ja mõõdikud ning annab valmis promptid sisemistele hackathon’idele.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Arvutionu.ee",
+      "url": "https://arvutionu.ee",
+      "telephone": "+37253359094",
+      "email": "info@arvutionu.ee"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">
+        <span class="brand-dot"></span>
+        Zero to Pilot AI Häkiklubi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Ava menüü">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#tool">Tööriist</a></li>
+          <li class="nav-item"><a class="nav-link" href="#usecases">Näidised</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how">Kuidas töötab</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge text-bg-info mb-3">Innovatsioon → 3–5 pilotit ühe istumisega</span>
+          <h1 class="display-5 fw-bold lh-sm">Äriprobleemist <span class="text-info">piloodini</span> enne kui energiat ära kaotad</h1>
+          <p class="lead text-hero-muted mt-3">
+            Sisesta probleem. Vali kontekst. Saa kohe struktuurne ideepakett:
+            kontseptsioonid, kasutusvood, sisendivajadus, mõõdikud ja
+            valmis hackathon promptid. Kiire, selge, päriselt rakendatav.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="#tool" class="btn btn-info btn-lg fw-semibold">Proovi tööriista</a>
+            <a href="#usecases" class="btn btn-outline-light btn-lg">Vaata 25 näidet</a>
+          </div>
+          <div class="mt-4 small text-hero-muted">
+            Arvutionu.ee · tel <a class="link-light text-decoration-none" href="tel:+37253359094">+37253359094</a> ·
+            <a class="link-light text-decoration-none" href="mailto:info@arvutionu.ee">info@arvutionu.ee</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="glass-card p-4">
+            <h2 class="h5 fw-semibold mb-3">Vali näidis ja näe kohe tulemust</h2>
+
+            <!-- Required: 25 working examples dropdown -->
+            <label for="exampleSelect" class="form-label">Näidisdemo (25 valikut)</label>
+            <select id="exampleSelect" class="form-select form-select-lg">
+              <option value="" selected disabled>Laen näidiseid…</option>
+            </select>
+
+            <div class="d-grid gap-2 mt-3">
+              <button id="loadExampleBtn" class="btn btn-outline-info">Lae valitud näidis</button>
+              <button id="resetBtn" class="btn btn-outline-light">Nulli vorm</button>
+            </div>
+
+            <hr class="border-light opacity-25 my-4">
+
+            <div class="d-flex align-items-start gap-2">
+              <div class="icon-pill bg-info-subtle text-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+                  <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                </svg>
+              </div>
+              <div class="small">
+                <div class="fw-semibold">MVP fookus</div>
+                <div class="text-hero-muted">
+                  Siin on front-end demo. Loogika on teadlikult lihtne ja
+                  ideaalne hackathon’i või müügidemoks.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="tool" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h2 class="fw-bold">Tööriist</h2>
+            <p class="text-secondary">
+              Täida väljad nii täpselt kui suudad. See demo genereerib struktureeritud
+              piloodipaki reeglitel põhineva mootoriga, et sul oleks kohe
+              arusaadav raam järgmiseks sammuks. Production-versioonis saab
+              sama skeemi siduda LLM-iga ja sinu sisemiste andmeallikatega.
+            </p>
+
+            <form id="problemForm" class="card bg-body-tertiary border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="mb-3">
+                  <label for="problemText" class="form-label fw-semibold">Äriprobleem</label>
+                  <textarea id="problemText" class="form-control" rows="5" placeholder="Kirjelda valu: mis on katki, kellel, miks see maksab raha või aega?"></textarea>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="domain" class="form-label fw-semibold">Valdkond</label>
+                    <input id="domain" type="text" class="form-control" placeholder="nt tootmine, jaekaubandus, fintech">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="horizon" class="form-label fw-semibold">Ajavaade</label>
+                    <select id="horizon" class="form-select">
+                      <option value="4-6 nädalat">4–6 nädalat (kiirpilt)</option>
+                      <option value="8-12 nädalat" selected>8–12 nädalat (standardsed pilotid)</option>
+                      <option value="3-6 kuud">3–6 kuud (keerukam integratsioon)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6">
+                    <label for="dataState" class="form-label fw-semibold">Andmete seis</label>
+                    <select id="dataState" class="form-select">
+                      <option value="killustunud excelid ja e-kirjad">Killustunud Excelid ja e-kirjad</option>
+                      <option value="olemas keskne andmeladu">Olemas keskne andmeladu</option>
+                      <option value="palju teksti ja dokumente" selected>Palju teksti ja dokumente</option>
+                      <option value="reaalajas sensor-/logiandmed">Reaalajas sensor-/logiandmed</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="constraints" class="form-label fw-semibold">Peamised piirangud</label>
+                    <input id="constraints" type="text" class="form-control" placeholder="nt GDPR, legacy ERP, eelarve, IT ressursid">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <label class="form-label fw-semibold">Eelistatud mõõdikud</label>
+                  <div class="row g-2">
+                    <div class="col-sm-6">
+                      <div class="form-check">
+                        <input class="form-check-input metric" type="checkbox" value="aja kokkuhoid" id="m1" checked>
+                        <label class="form-check-label" for="m1">Aja kokkuhoid</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input metric" type="checkbox" value="kulu vähenemine" id="m2" checked>
+                        <label class="form-check-label" for="m2">Kulu vähenemine</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-check">
+                        <input class="form-check-input metric" type="checkbox" value="kvaliteedi paranemine" id="m3">
+                        <label class="form-check-label" for="m3">Kvaliteedi paranemine</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input metric" type="checkbox" value="müügi kasv" id="m4">
+                        <label class="form-check-label" for="m4">Müügi kasv</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                  <button id="generateBtn" type="submit" class="btn btn-info fw-semibold">
+                    Genereeri 3–5 pilotit
+                  </button>
+                  <button id="copyPromptsBtn" type="button" class="btn btn-outline-light">
+                    Kopeeri hackathon promptid
+                  </button>
+                  <button id="exportBtn" type="button" class="btn btn-outline-info">
+                    Ekspordi JSON
+                  </button>
+                </div>
+
+                <div id="formHint" class="small text-secondary mt-3">
+                  Nipp: vali ülal olevast rippmenüüst näidis, kui tahad kohe ideede maitset.
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="sticky-wrap">
+              <div class="d-flex align-items-center justify-content-between">
+                <h2 class="fw-bold mb-0">Pilotkontseptsioonid</h2>
+                <span id="pilotCountBadge" class="badge text-bg-secondary">0</span>
+              </div>
+              <p class="text-secondary mt-2">
+                Siin kuvatakse automaatselt 3–5 ideed koos esimese kasutusvoo,
+                sisendivajaduse ja mõõdikutega.
+              </p>
+
+              <div id="pilotsContainer" class="vstack gap-3"></div>
+
+              <div class="mt-5">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h3 class="h5 fw-semibold mb-0">Sisemise hackathon’i promptid</h3>
+                  <button id="copyPromptsInlineBtn" class="btn btn-sm btn-outline-light">Kopeeri</button>
+                </div>
+                <pre id="promptsBlock" class="prompt-block mt-2"><code>Vali näidis või täida vorm ning vajuta “Genereeri”.</code></pre>
+                <div class="small text-secondary">
+                  Need promptid on mõeldud sisemiseks ideesprintiks, kus tiimid peavad
+                  kiiresti konkreetseid pilote disainima.
+                </div>
+              </div>
+
+              <div id="toastHost" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="usecases" class="py-5 bg-dark-soft">
+      <div class="container">
+        <div class="row g-4 align-items-end">
+          <div class="col-lg-7">
+            <h2 class="fw-bold">25 näidet, et su tiim ei jääks valge lehe taha kinni</h2>
+            <p class="text-secondary">
+              Näidised katavad tootmist, jaekaubandust, tervist, avalikku sektorit,
+              finantsi, logistikat ja kliendituge.
+              Kõik on lihtsustatud, et sobiksid hackathon’ile ja demo-landingule.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-sm bg-body-tertiary">
+              <div class="card-body">
+                <div class="small text-secondary">Kiirvalik</div>
+                <div class="d-grid">
+                  <select id="exampleSelectSecondary" class="form-select">
+                    <option value="" selected disabled>Vali näidis…</option>
+                  </select>
+                </div>
+                <div class="d-grid mt-2">
+                  <button id="loadExampleBtnSecondary" class="btn btn-outline-info btn-sm">Lae näidis tööriista</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="examplesGrid" class="row g-3 mt-1"></div>
+      </div>
+    </section>
+
+    <section id="how" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-number">1</div>
+              <h3 class="h5 fw-semibold">Defineeri probleem</h3>
+              <p class="text-secondary">
+                Kirjelda valu, protsessi omanik, maht ja miks see on ärikriitiline.
+                Kui probleem pole terav, pole ka pilotil šanssi.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-number">2</div>
+              <h3 class="h5 fw-semibold">Pane kontekst paika</h3>
+              <p class="text-secondary">
+                Andmed, piirangud ja ajavaade teevad vahe “äge idee”
+                ja “päriselt teostatav 8–12 nädalaga” vahel.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-number">3</div>
+              <h3 class="h5 fw-semibold">Käivita sisemine häkk</h3>
+              <p class="text-secondary">
+                Kasuta valmis prompte, jaga tiimidesse ning lase igal grupil
+                välja pakkuda oma MVP kasutusvoog ja mõõdikud.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout mt-5 p-4 p-lg-5">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-8">
+              <h3 class="h4 fw-bold mb-1">Kui sa ei mõõda, siis sa lihtsalt loodad</h3>
+              <div class="text-secondary">
+                See tööriist surub fookuse “mis on edu definitsioon?” küsimusele.
+                See on kõige odavam viis vältida pilotsurnuaeda.
+              </div>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#tool" class="btn btn-info btn-lg fw-semibold">Ehita pilotipakk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-dark-soft">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="fw-bold">Tahan selle viia productionisse</h2>
+            <p class="text-secondary">
+              Kui sul on fookusvaldkonnad ja olemasolevad andmeallikad,
+              saame panna sellele reaalse LLM-mootori, ligipääsuhalduse,
+              auditlogid ja integratsioonid (ERP/CRM/ITSM),
+              ning muuta selle sisuliselt sinu innovatsioonitiimi “pilootivabrikuks”.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-sm bg-body-tertiary">
+              <div class="card-body">
+                <div class="fw-semibold">Arvutionu.ee</div>
+                <div class="small text-secondary">AI ja digitransformatsiooni tööriistad</div>
+                <hr class="border-light opacity-25">
+                <div class="d-flex flex-column gap-1">
+                  <a class="link-light text-decoration-none" href="https://arvutionu.ee">arvutionu.ee</a>
+                  <a class="link-light text-decoration-none" href="tel:+37253359094">+37253359094</a>
+                  <a class="link-light text-decoration-none" href="mailto:info@arvutionu.ee">info@arvutionu.ee</a>
+                </div>
+                <div class="mt-3 small text-secondary">
+                  Saadame vajadusel ka 1-lehelise piloteerimisplaani ja hinnapakkumise.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top border-light border-opacity-10">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+      <div class="small text-secondary">© <span id="yearSpan"></span> Arvutionu.ee · Zero to Pilot AI Häkiklubi</div>
+      <div class="small">
+        <a class="link-light text-decoration-none me-3" href="#tool">Tööriist</a>
+        <a class="link-light text-decoration-none me-3" href="#usecases">Näidised</a>
+        <a class="link-light text-decoration-none" href="#contact">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
