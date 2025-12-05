@@ -5,7 +5,7 @@
 
 See versioon on **offline-sõbralik MVP**: reeglitel põhinev loogika, 25 sisseehitatud näidet ja null sõltuvust serverist.
 
----
+![ScreenShot](https://github.com/arvutionu2015m/Zero-to-Pilot-AI-Hakiklubi/blob/main/Zero%20to%20Pilot.png)
 
 ## Miks see eksisteerib
 
